@@ -1,0 +1,288 @@
+INFO:root:Starting API request task
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): registers.esma.europa.eu:443
+DEBUG:urllib3.connectionpool:https://registers.esma.europa.eu:443 "GET /solr/esma_registers_firds_files/select?q=%2A&fq=publication_date%3A%5B2021-01-17T00%3A00%3A00Z+TO+2021-01-19T23%3A59%3A59Z%5D&wt=xml&indent=true&start=0&rows=100 HTTP/1.1" 200 None
+INFO:root:API request task completed successfully
+INFO:root:XML parsing task completed successfully
+INFO:root:Starting file download task
+INFO:root:File download task completed successfully
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): firds.esma.europa.eu:80
+DEBUG:urllib3.connectionpool:http://firds.esma.europa.eu:80 "GET /firds/DLTINS_20210117_01of01.zip HTTP/1.1" 200 4434514
+INFO:root:DLTINS.zip file is downloaded successfully.
+INFO:root:XML file extracted successfully from DLTINS.zip file.
+INFO:root:Creating a list to store the extracted data...
+INFO:root:Extracting data from the XML...
+INFO:root:Writing the extracted data to a CSV file...
+INFO:root:Data extraction and writing to CSV completed successfully.
+INFO:root:Header row written to CSV file
+INFO:root:Data written to CSV file
+DEBUG:botocore.hooks:Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+DEBUG:botocore.hooks:Changing event name from before-call.apigateway to before-call.api-gateway
+DEBUG:botocore.hooks:Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+DEBUG:botocore.hooks:Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+DEBUG:botocore.hooks:Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+DEBUG:botocore.hooks:Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+DEBUG:botocore.hooks:Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\boto3\data\s3\2006-03-01\resources-1.json
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\endpoints.json
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\sdk-default-configuration.json
+DEBUG:botocore.hooks:Event choose-service-name: calling handler <function handle_service_name_alias at 0x0000022C709E8040>
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\s3\2006-03-01\service-2.json
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\s3\2006-03-01\endpoint-rule-set-1.json.gz
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\partitions.json
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x0000022C7094B5E0>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x0000022C6340EF70>
+DEBUG:botocore.hooks:Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x0000022C7094B3A0>
+DEBUG:botocore.endpoint:Setting s3 timeout as (60, 60)
+DEBUG:botocore.loaders:Loading JSON file: C:\Users\nager\anaconda3\lib\site-packages\botocore\data\_retry.json
+DEBUG:botocore.client:Registering retry handlers for service: s3
+DEBUG:botocore.utils:Registering S3 region redirector handler
+DEBUG:boto3.resources.factory:Loading s3:s3
+DEBUG:boto3.resources.factory:Loading s3:Bucket
+DEBUG:boto3.resources.model:Renaming Bucket attribute name
+DEBUG:botocore.hooks:Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x0000022C70A84DC0>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000022C23D46670>}) about to wait for the following futures []
+DEBUG:s3transfer.tasks:UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000022C23D46670>}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000022C23D46670>}) with kwargs {'client': <botocore.client.S3 object at 0x0000022C23BC3EB0>, 'config': <boto3.s3.transfer.TransferConfig object at 0x0000022C23D2EEB0>, 'osutil': <s3transfer.utils.OSUtils object at 0x0000022C23D428E0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x0000022C23D42AC0>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x0000022C23D46670>}
+DEBUG:s3transfer.futures:Submitting task CreateMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x0000022C23D42AC0> for transfer request: 0.
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:CreateMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) about to wait for the following futures []
+DEBUG:s3transfer.futures:Submitting task UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x0000022C23D42AC0> for transfer request: 0.
+DEBUG:s3transfer.tasks:CreateMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:s3transfer.tasks:Executing task CreateMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x0000022C23BC3EB0>, 'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000022C70A09B80>
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}}) about to wait for the following futures [<s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>]
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}}) about to wait for <s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>
+DEBUG:s3transfer.futures:Submitting task UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x0000022C23D42AC0> for transfer request: 0.
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Bucket': 'steelyesatvik12017696', 'Region': 'ap-south-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+DEBUG:botocore.regions:Endpoint provider result: https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}}) about to wait for the following futures [<s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>]
+DEBUG:botocore.regions:Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+DEBUG:s3transfer.futures:Submitting task CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x0000022C23D42AC0> for transfer request: 0.
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}}) about to wait for <s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>
+DEBUG:botocore.regions:Selected auth type "v4" as "v4" with signing context params: {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+DEBUG:s3transfer.utils:Acquiring 0
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function validate_ascii_metadata at 0x0000022C70A08820>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function sse_md5 at 0x0000022C70A01C10>
+DEBUG:s3transfer.tasks:CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) about to wait for the following futures [<s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>, <s3transfer.futures.ExecutorFuture object at 0x0000022C23D547C0>, <s3transfer.futures.ExecutorFuture object at 0x0000022C23D615B0>]
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function validate_bucket_name at 0x0000022C70A01B80>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) about to wait for <s3transfer.futures.ExecutorFuture object at 0x0000022C23D54040>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000022C70A099D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CreateMultipartUpload: calling handler <function generate_idempotent_uuid at 0x0000022C70A019D0>
+DEBUG:botocore.hooks:Event before-call.s3.CreateMultipartUpload: calling handler <function add_expect_header at 0x0000022C70A01EE0>
+DEBUG:botocore.hooks:Event before-call.s3.CreateMultipartUpload: calling handler <function add_recursion_detection_header at 0x0000022C70A01670>
+DEBUG:botocore.hooks:Event before-call.s3.CreateMultipartUpload: calling handler <function inject_api_version_header_if_needed at 0x0000022C70A09280>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=CreateMultipartUpload) with params: {'url_path': '/finaluplaod.csv?uploads', 'query_string': {}, 'method': 'POST', 'headers': {'User-Agent': 'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource'}, 'body': b'', 'auth_path': '/steelyesatvik12017696/finaluplaod.csv?uploads', 'url': 'https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploads', 'context': {'client_region': 'ap-south-1', 'client_config': <botocore.config.Config object at 0x0000022C23BCA1C0>, 'has_streaming_input': False, 'auth_type': 'v4', 'signing': {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 's3_redirect': {'redirected': False, 'bucket': 'steelyesatvik12017696', 'params': {'Bucket': 'steelyesatvik12017696', 'Key': 'finaluplaod.csv'}}}}
+DEBUG:botocore.hooks:Event request-created.s3.CreateMultipartUpload: calling handler <function signal_not_transferring at 0x0000022C23C73700>
+DEBUG:botocore.hooks:Event request-created.s3.CreateMultipartUpload: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000022C23BC3D90>>
+DEBUG:botocore.hooks:Event choose-signer.s3.CreateMultipartUpload: calling handler <function set_operation_specific_signer at 0x0000022C70A018B0>
+DEBUG:botocore.hooks:Event before-sign.s3.CreateMultipartUpload: calling handler <function remove_arn_from_signing_path at 0x0000022C70A09AF0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/finaluplaod.csv
+uploads=
+host:steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20230422T193913Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230422T193913Z
+20230422/ap-south-1/s3/aws4_request
+96f6aaa356cf2f46027d8fed8c414be343aa03ec881b4e88a1dca08c69f97096
+DEBUG:botocore.auth:Signature:
+c6c1d98daccf43d85254ef565e396c7ee1132256164f3236e91f98815418c3ca
+DEBUG:botocore.hooks:Event request-created.s3.CreateMultipartUpload: calling handler <function signal_transferring at 0x0000022C23C73790>
+DEBUG:botocore.hooks:Event request-created.s3.CreateMultipartUpload: calling handler <function add_retry_headers at 0x0000022C70A09940>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploads, headers={'User-Agent': b'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'X-Amz-Date': b'20230422T193913Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIA4EXU2B63V5WNW2X7/20230422/ap-south-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=c6c1d98daccf43d85254ef565e396c7ee1132256164f3236e91f98815418c3ca', 'amz-sdk-invocation-id': b'277cfee6-b162-493f-a5a0-f206d09d5e75', 'amz-sdk-request': b'attempt=1', 'Content-Length': '0'}>
+DEBUG:botocore.httpsession:Certificate path: C:\Users\nager\anaconda3\lib\site-packages\certifi\cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443
+DEBUG:urllib3.connectionpool:https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443 "POST /finaluplaod.csv?uploads HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': '8w7EykGgbbp9/PjPJT1pOlwuLZdXA5rVNyjON1t+G4Nz+LF7Pm7rc/pSd3aMky7RSjey02iZ81o=', 'x-amz-request-id': 'TNF059K2APTT9TJ0', 'Date': 'Sat, 22 Apr 2023 19:39:15 GMT', 'x-amz-server-side-encryption': 'AES256', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<InitiateMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Bucket>steelyesatvik12017696</Bucket><Key>finaluplaod.csv</Key><UploadId>tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-</UploadId></InitiateMultipartUploadResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.CreateMultipartUpload: calling handler <botocore.retryhandler.RetryHandler object at 0x0000022C23D17640>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.CreateMultipartUpload: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) about to wait for <s3transfer.futures.ExecutorFuture object at 0x0000022C23D547C0>
+DEBUG:s3transfer.tasks:Executing task UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x0000022C23BC3EB0>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54370>, 'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 1, 'extra_args': {}, 'upload_id': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-'}
+DEBUG:s3transfer.tasks:Executing task UploadPartTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x0000022C23BC3EB0>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54B50>, 'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'part_number': 2, 'extra_args': {}, 'upload_id': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-'}
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000022C70A09B80>
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000022C70A09B80>
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Bucket': 'steelyesatvik12017696', 'Region': 'ap-south-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Bucket': 'steelyesatvik12017696', 'Region': 'ap-south-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+DEBUG:botocore.regions:Endpoint provider result: https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+DEBUG:botocore.regions:Endpoint provider result: https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+DEBUG:botocore.regions:Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+DEBUG:botocore.regions:Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+DEBUG:botocore.regions:Selected auth type "v4" as "v4" with signing context params: {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+DEBUG:botocore.regions:Selected auth type "v4" as "v4" with signing context params: {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function sse_md5 at 0x0000022C70A01C10>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function sse_md5 at 0x0000022C70A01C10>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function convert_body_to_file_like_object at 0x0000022C70A09160>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function convert_body_to_file_like_object at 0x0000022C70A09160>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function validate_bucket_name at 0x0000022C70A01B80>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function validate_bucket_name at 0x0000022C70A01B80>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000022C70A099D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000022C70A099D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function generate_idempotent_uuid at 0x0000022C70A019D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function conditionally_calculate_md5 at 0x0000022C6D8EF9D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.UploadPart: calling handler <function generate_idempotent_uuid at 0x0000022C70A019D0>
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function conditionally_calculate_md5 at 0x0000022C6D8EF9D0>
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function add_expect_header at 0x0000022C70A01EE0>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function add_recursion_detection_header at 0x0000022C70A01670>
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function inject_api_version_header_if_needed at 0x0000022C70A09280>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=UploadPart) with params: {'url_path': '/finaluplaod.csv', 'query_string': {'uploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'partNumber': 2}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'Content-MD5': '7NctqdCLHiw/KJRtrfqUng==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54B50>, 'auth_path': '/steelyesatvik12017696/finaluplaod.csv', 'url': 'https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=2', 'context': {'client_region': 'ap-south-1', 'client_config': <botocore.config.Config object at 0x0000022C23BCA1C0>, 'has_streaming_input': True, 'auth_type': 'v4', 'signing': {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 's3_redirect': {'redirected': False, 'bucket': 'steelyesatvik12017696', 'params': {'Bucket': 'steelyesatvik12017696', 'Key': 'finaluplaod.csv', 'UploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'PartNumber': 2, 'Body': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54B50>}}}}
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function signal_not_transferring at 0x0000022C23C73700>
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000022C23BC3D90>>
+DEBUG:botocore.hooks:Event choose-signer.s3.UploadPart: calling handler <function set_operation_specific_signer at 0x0000022C70A018B0>
+DEBUG:botocore.hooks:Event before-sign.s3.UploadPart: calling handler <function remove_arn_from_signing_path at 0x0000022C70A09AF0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/finaluplaod.csv
+partNumber=2&uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-
+content-md5:7NctqdCLHiw/KJRtrfqUng==
+host:steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20230422T193914Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230422T193914Z
+20230422/ap-south-1/s3/aws4_request
+1f6efce6ea5f4e84d0467418ed45589d495fd6bbc26de0c942e74936b4fe06ac
+DEBUG:botocore.auth:Signature:
+25fddc122d092c7000cf08d55e6fb72dd4f45320ea739e959f8c80d853f2a597
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function signal_transferring at 0x0000022C23C73790>
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function add_retry_headers at 0x0000022C70A09940>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=2, headers={'User-Agent': b'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'Content-MD5': b'7NctqdCLHiw/KJRtrfqUng==', 'Expect': b'100-continue', 'X-Amz-Date': b'20230422T193914Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIA4EXU2B63V5WNW2X7/20230422/ap-south-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=25fddc122d092c7000cf08d55e6fb72dd4f45320ea739e959f8c80d853f2a597', 'amz-sdk-invocation-id': b'48023f4d-8de0-4ea2-83e4-cfe82c028fc8', 'amz-sdk-request': b'attempt=1', 'Content-Length': '553669'}>
+DEBUG:botocore.httpsession:Certificate path: C:\Users\nager\anaconda3\lib\site-packages\certifi\cacert.pem
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function add_expect_header at 0x0000022C70A01EE0>
+DEBUG:botocore.handlers:Adding expect 100 continue header to request.
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function add_recursion_detection_header at 0x0000022C70A01670>
+DEBUG:botocore.hooks:Event before-call.s3.UploadPart: calling handler <function inject_api_version_header_if_needed at 0x0000022C70A09280>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=UploadPart) with params: {'url_path': '/finaluplaod.csv', 'query_string': {'uploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'partNumber': 1}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'Content-MD5': 'biIf9hWcmcGloBfrAJIC2w==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54370>, 'auth_path': '/steelyesatvik12017696/finaluplaod.csv', 'url': 'https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=1', 'context': {'client_region': 'ap-south-1', 'client_config': <botocore.config.Config object at 0x0000022C23BCA1C0>, 'has_streaming_input': True, 'auth_type': 'v4', 'signing': {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 's3_redirect': {'redirected': False, 'bucket': 'steelyesatvik12017696', 'params': {'Bucket': 'steelyesatvik12017696', 'Key': 'finaluplaod.csv', 'UploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'PartNumber': 1, 'Body': <s3transfer.utils.ReadFileChunk object at 0x0000022C23D54370>}}}}
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function signal_not_transferring at 0x0000022C23C73700>
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000022C23BC3D90>>
+DEBUG:botocore.hooks:Event choose-signer.s3.UploadPart: calling handler <function set_operation_specific_signer at 0x0000022C70A018B0>
+DEBUG:botocore.hooks:Event before-sign.s3.UploadPart: calling handler <function remove_arn_from_signing_path at 0x0000022C70A09AF0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+PUT
+/finaluplaod.csv
+partNumber=1&uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-
+content-md5:biIf9hWcmcGloBfrAJIC2w==
+host:steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20230422T193914Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230422T193914Z
+20230422/ap-south-1/s3/aws4_request
+5636f4cbbd511d07d064c9596da4024cfebdcc2c8952273deae7f5e6f2104bf0
+DEBUG:botocore.auth:Signature:
+1744c545e6af5f34e3220057c530d94b62fc6ac36916b2829b923029736147b3
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function signal_transferring at 0x0000022C23C73790>
+DEBUG:botocore.hooks:Event request-created.s3.UploadPart: calling handler <function add_retry_headers at 0x0000022C70A09940>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=1, headers={'User-Agent': b'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'Content-MD5': b'biIf9hWcmcGloBfrAJIC2w==', 'Expect': b'100-continue', 'X-Amz-Date': b'20230422T193914Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIA4EXU2B63V5WNW2X7/20230422/ap-south-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=1744c545e6af5f34e3220057c530d94b62fc6ac36916b2829b923029736147b3', 'amz-sdk-invocation-id': b'a5d4ce37-2882-4c11-8229-9f98b37d1a37', 'amz-sdk-request': b'attempt=1', 'Content-Length': '8388608'}>
+DEBUG:botocore.httpsession:Certificate path: C:\Users\nager\anaconda3\lib\site-packages\certifi\cacert.pem
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:botocore.awsrequest:Waiting for 100 Continue response.
+DEBUG:botocore.awsrequest:100 Continue response seen, now sending request body.
+DEBUG:urllib3.connectionpool:https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443 "PUT /finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=2 HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'j+QZwtijZ/n4eWt8ue9QGDtgt9z8EWqY2KGqbl+uWE1DG8vzn+XZy5cTIwG3Oa8y4L0dPk964fo=', 'x-amz-request-id': 'TNF0JJK529EDZ3QY', 'Date': 'Sat, 22 Apr 2023 19:39:15 GMT', 'ETag': '"ecd72da9d08b1e2c3f28946dadfa949e"', 'x-amz-server-side-encryption': 'AES256', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.UploadPart: calling handler <botocore.retryhandler.RetryHandler object at 0x0000022C23D17640>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.UploadPart: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:urllib3.connectionpool:https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443 "PUT /finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-&partNumber=1 HTTP/1.1" 200 0
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'qZuQ+V9K6YXndKbqkQr+DizsIhqUzlp8VCmPBWEMW+Tw36OpZzEOjVRxdTyaXh4+GAzS4KqRqHI=', 'x-amz-request-id': 'TNF44AH0EYHK041F', 'Date': 'Sat, 22 Apr 2023 19:39:15 GMT', 'ETag': '"6e221ff6159c99c1a5a017eb009202db"', 'x-amz-server-side-encryption': 'AES256', 'Server': 'AmazonS3', 'Content-Length': '0'}
+DEBUG:botocore.parsers:Response body:
+b''
+DEBUG:botocore.hooks:Event needs-retry.s3.UploadPart: calling handler <botocore.retryhandler.RetryHandler object at 0x0000022C23D17640>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.UploadPart: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+DEBUG:s3transfer.tasks:CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) about to wait for <s3transfer.futures.ExecutorFuture object at 0x0000022C23D615B0>
+DEBUG:s3transfer.tasks:CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) done waiting for dependent futures
+DEBUG:s3transfer.tasks:Executing task CompleteMultipartUploadTask(transfer_id=0, {'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x0000022C23BC3EB0>, 'bucket': 'steelyesatvik12017696', 'key': 'finaluplaod.csv', 'extra_args': {}, 'upload_id': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'parts': [{'ETag': '"6e221ff6159c99c1a5a017eb009202db"', 'PartNumber': 1}, {'ETag': '"ecd72da9d08b1e2c3f28946dadfa949e"', 'PartNumber': 2}]}
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x0000022C70A09B80>
+DEBUG:botocore.hooks:Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.regions:Calling endpoint provider with parameters: {'Bucket': 'steelyesatvik12017696', 'Region': 'ap-south-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': False, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+DEBUG:botocore.regions:Endpoint provider result: https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+DEBUG:botocore.regions:Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+DEBUG:botocore.regions:Selected auth type "v4" as "v4" with signing context params: {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <function validate_bucket_name at 0x0000022C70A01B80>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <function remove_bucket_from_url_paths_from_model at 0x0000022C70A099D0>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:botocore.hooks:Event before-parameter-build.s3.CompleteMultipartUpload: calling handler <function generate_idempotent_uuid at 0x0000022C70A019D0>
+DEBUG:botocore.hooks:Event before-call.s3.CompleteMultipartUpload: calling handler <function add_expect_header at 0x0000022C70A01EE0>
+DEBUG:botocore.hooks:Event before-call.s3.CompleteMultipartUpload: calling handler <function add_recursion_detection_header at 0x0000022C70A01670>
+DEBUG:botocore.hooks:Event before-call.s3.CompleteMultipartUpload: calling handler <function inject_api_version_header_if_needed at 0x0000022C70A09280>
+DEBUG:botocore.endpoint:Making request for OperationModel(name=CompleteMultipartUpload) with params: {'url_path': '/finaluplaod.csv', 'query_string': {'uploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-'}, 'method': 'POST', 'headers': {'User-Agent': 'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource'}, 'body': b'<CompleteMultipartUpload xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Part><ETag>"6e221ff6159c99c1a5a017eb009202db"</ETag><PartNumber>1</PartNumber></Part><Part><ETag>"ecd72da9d08b1e2c3f28946dadfa949e"</ETag><PartNumber>2</PartNumber></Part></CompleteMultipartUpload>', 'auth_path': '/steelyesatvik12017696/finaluplaod.csv', 'url': 'https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'context': {'client_region': 'ap-south-1', 'client_config': <botocore.config.Config object at 0x0000022C23BCA1C0>, 'has_streaming_input': False, 'auth_type': 'v4', 'signing': {'region': 'ap-south-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 's3_redirect': {'redirected': False, 'bucket': 'steelyesatvik12017696', 'params': {'Bucket': 'steelyesatvik12017696', 'Key': 'finaluplaod.csv', 'UploadId': 'tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-', 'MultipartUpload': {'Parts': [{'ETag': '"6e221ff6159c99c1a5a017eb009202db"', 'PartNumber': 1}, {'ETag': '"ecd72da9d08b1e2c3f28946dadfa949e"', 'PartNumber': 2}]}}}}}
+DEBUG:botocore.hooks:Event request-created.s3.CompleteMultipartUpload: calling handler <function signal_not_transferring at 0x0000022C23C73700>
+DEBUG:botocore.hooks:Event request-created.s3.CompleteMultipartUpload: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x0000022C23BC3D90>>
+DEBUG:botocore.hooks:Event choose-signer.s3.CompleteMultipartUpload: calling handler <function set_operation_specific_signer at 0x0000022C70A018B0>
+DEBUG:botocore.hooks:Event before-sign.s3.CompleteMultipartUpload: calling handler <function remove_arn_from_signing_path at 0x0000022C70A09AF0>
+DEBUG:botocore.auth:Calculating signature using v4 auth.
+DEBUG:botocore.auth:CanonicalRequest:
+POST
+/finaluplaod.csv
+uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-
+host:steelyesatvik12017696.s3.ap-south-1.amazonaws.com
+x-amz-content-sha256:fd72da933920828b7d6f03840e2c612fd46e20a39039fa97ea8cfd54545a3987
+x-amz-date:20230422T193931Z
+
+host;x-amz-content-sha256;x-amz-date
+fd72da933920828b7d6f03840e2c612fd46e20a39039fa97ea8cfd54545a3987
+DEBUG:botocore.auth:StringToSign:
+AWS4-HMAC-SHA256
+20230422T193931Z
+20230422/ap-south-1/s3/aws4_request
+3e48d0d156789f21153c1555fcf4ef6421af722f58da6a9ec27ae13aa1e38730
+DEBUG:botocore.auth:Signature:
+97c919d12829836f04761e58493176c7562756915e0c6199b29149cb9df24601
+DEBUG:botocore.hooks:Event request-created.s3.CompleteMultipartUpload: calling handler <function signal_transferring at 0x0000022C23C73790>
+DEBUG:botocore.hooks:Event request-created.s3.CompleteMultipartUpload: calling handler <function add_retry_headers at 0x0000022C70A09940>
+DEBUG:botocore.endpoint:Sending http request: <AWSPreparedRequest stream_output=False, method=POST, url=https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U-, headers={'User-Agent': b'Boto3/1.26.118 Python/3.9.7 Windows/10 Botocore/1.29.118 Resource', 'X-Amz-Date': b'20230422T193931Z', 'X-Amz-Content-SHA256': b'fd72da933920828b7d6f03840e2c612fd46e20a39039fa97ea8cfd54545a3987', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIA4EXU2B63V5WNW2X7/20230422/ap-south-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=97c919d12829836f04761e58493176c7562756915e0c6199b29149cb9df24601', 'amz-sdk-invocation-id': b'73d735ec-0dca-47bf-9d41-d1a74e18d248', 'amz-sdk-request': b'attempt=1', 'Content-Length': '271'}>
+DEBUG:botocore.httpsession:Certificate path: C:\Users\nager\anaconda3\lib\site-packages\certifi\cacert.pem
+DEBUG:urllib3.connectionpool:https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com:443 "POST /finaluplaod.csv?uploadId=tUIxXpcvHWSFB3IX0CnSkPuVIajjbaj9gaSuVhoILFlGZU1.n.OJwkblMWh_1xqxTvJsD5jgD2AongF.qo_8hHmXMQ5_Fazn0ZstRe3j2_U- HTTP/1.1" 200 None
+DEBUG:botocore.parsers:Response headers: {'x-amz-id-2': 'Mw/1lodUxgWeJrufimAgTtzvkbxrkyXTcDpmLc8uP4u+ImeprqAueQevnYooPTWCi/0bFhA5eRI=', 'x-amz-request-id': 'P213K8QTP0WYAH8Y', 'Date': 'Sat, 22 Apr 2023 19:39:32 GMT', 'x-amz-server-side-encryption': 'AES256', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+DEBUG:botocore.parsers:Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n\n<CompleteMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Location>https://steelyesatvik12017696.s3.ap-south-1.amazonaws.com/finaluplaod.csv</Location><Bucket>steelyesatvik12017696</Bucket><Key>finaluplaod.csv</Key><ETag>"5a724725b4abe5899f3ec4991557355f-2"</ETag></CompleteMultipartUploadResult>'
+DEBUG:botocore.hooks:Event needs-retry.s3.CompleteMultipartUpload: calling handler <function check_for_200_error at 0x0000022C70A01790>
+DEBUG:botocore.hooks:Event needs-retry.s3.CompleteMultipartUpload: calling handler <botocore.retryhandler.RetryHandler object at 0x0000022C23D17640>
+DEBUG:botocore.retryhandler:No retry needed.
+DEBUG:botocore.hooks:Event needs-retry.s3.CompleteMultipartUpload: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x0000022C23D17700>>
+DEBUG:s3transfer.utils:Releasing acquire 0/None
+INFO:root:Successfully uploaded steelyesatvikresultoutput.csv to S3 bucket steelyesatvik12017696.
